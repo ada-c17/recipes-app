@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# Recipe App
+
+![Part 1](src/images/Screen%20Shot%202022-06-21%20at%206.14.03%20PM.png)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

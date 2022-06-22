@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from 'prop-types';
+
 
 
 const Recipe = ({ mealType, name, ingredients, onDelete}) => {
@@ -30,6 +32,13 @@ const Recipe = ({ mealType, name, ingredients, onDelete}) => {
         </li>
 
     )
+}
+
+Recipe.propType = {
+    mealType: PropTypes.string.isRequired,
+    name: PropTypes.string.isRequired,
+    ingredients: PropTypes.arrayOf(PropTypes.string).isRequired,
+    onDelete: PropTypes.func.isRequired
 }
 
 
