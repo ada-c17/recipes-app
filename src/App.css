@@ -29,6 +29,12 @@ main{
   text-align: center;
 }
 
+.ingredients {
+  max-height: 100px;
+  overflow: scroll;
+  background-color:whitesmoke;
+}
+
 button {
   width: 8em;
   height: 3em;

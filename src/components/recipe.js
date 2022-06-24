@@ -19,7 +19,7 @@ const Recipe = ({id, name, ingredients, mealType, onDelete}) => {
         <li className="recipes">
             <h3>{name}</h3>
             <h4>Ingredients:</h4>
-                <ul>
+                <ul class="ingredients">
                     {ingredientList}
                 </ul>
             
