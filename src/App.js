@@ -1,11 +1,20 @@
 import './App.css';
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 import RecipeList from './components/recipeList';
-import recipeData from "./data/recipeData.json"
-
+import recipeData from "./data/recipeData.json";
+import axios from 'axios';
+const URL = "http://localhost:5000/desserts"
 function App() {
 
-  const [recipes, setRecipes] = useState(recipeData);
+  const [recipes, setRecipes] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get(URL)
+      .then((response) => {
+        setRecipes(response.data)
+      })
+  }, [])
 
   const onDelete = (id) => {
     const newRecipes = recipes.filter((recipe) => {
