@@ -10,13 +10,17 @@ function App() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    axios
-      .get(URL)
-      .then((response) => {
-        setRecipes(response.data)
-      })
+    getRecipes()
   }, [])
 
+
+const getRecipes = () => {
+  axios
+  .get(URL)
+  .then((response) => {
+    setRecipes(response.data)
+  })
+}  
   const onDelete = (id) => {
     const newRecipes = recipes.filter((recipe) => {
       console.log(recipe)
@@ -32,14 +36,9 @@ function App() {
     axios
       .post(URL, recipeData)
       .then((response) => {
-        const newRecipes = [...recipeData];
-        newRecipes.unshift({
-          id: response.data.id,
-          ...recipeData
-        });
-        setRecipes(newRecipes)
+        getRecipes();
       })
-  }
+    }
 
   return (
     <main>
