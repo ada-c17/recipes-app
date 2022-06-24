@@ -1,6 +1,7 @@
 import './App.css';
 import React, {useState} from 'react';
 import RecipeList from './components/recipeList';
+import NewRecipeForm from './components/NewRecipeForm';
 import recipeData from "./data/recipeData.json"
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
   return (
     <main>
       <h1>Recipe App</h1>
+      <NewRecipeForm />
       <RecipeList recipes={recipes} onDelete={onDelete}/>
     </main>
   );
